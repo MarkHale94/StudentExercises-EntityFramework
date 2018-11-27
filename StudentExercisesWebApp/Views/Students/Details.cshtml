@@ -28,7 +28,18 @@
         <dd>
             @Html.DisplayFor(model => model.Cohort.Name)
         </dd>
-    </dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentExercises)
+        </dt>
+        <dd>
+            <ul>
+            @foreach(StudentExercise se in Model.StudentExercises)
+            {
+                <li>@se.Exercise.Name</li>
+            }
+            </ul>
+        </dd>
+     </dl>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.StudentId">Edit</a> |
