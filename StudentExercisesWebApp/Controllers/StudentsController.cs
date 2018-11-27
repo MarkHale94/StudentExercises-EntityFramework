@@ -35,6 +35,7 @@ namespace StudentExercisesWebApp.Controllers
                 return NotFound();
             }
 
+
             var student = await _context.Students
                 .Include(s => s.Cohort)
                 .Include(s => s.StudentExercises)
